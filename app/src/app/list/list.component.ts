@@ -9,6 +9,9 @@ export class ListComponent implements OnInit {
 
   constructor() { }
 
+
+  firstName = 'ali'
+
   ngOnInit(): void {
   }
 

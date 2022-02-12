@@ -2,7 +2,7 @@
 
     <div class=" flex justify-around border-red-500 rounded-b-md bg-green-200  mx-4 m-8 p-2 rounded-2xl relative...">
         <ul id="nameStudent" class="flex flex-col">
-
+            <li>{{student.firstName}}</li>
         </ul>
 
 
@@ -16,9 +16,9 @@
 
         <div class="flex-col 	">
 
-            <div class="w-96 text-left"> <input [ngModel]="firstName" class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="student.firstName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="fname" value=""></div>
-            <div class="w-96 text-left"> <input class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="student.lastName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="lname" value=""></div>
             <div class="w-96 text-left"> <input class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="job" value=""></div>

@@ -1,4 +1,7 @@
 <app-header></app-header>
-<app-list></app-list>
-<app-detail-student></app-detail-student>
+<app-detail-form [student]="showingStudent"></app-detail-form>
+
+
+<a (click)="showSecond()">SHOW STUDENT 2</a><br/>
+<a (click)="showFirst()">SHOW STUDENT 1</a><br/>
 <router-outlet></router-outlet>
