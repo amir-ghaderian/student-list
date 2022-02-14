@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ListComponent } from './list/list.component';
 import { DetailStudentComponent } from './detail-student/detail-student.component';
 import { FormsModule } from '@angular/forms';
 import { DetailFormComponent } from './components/detail-form/detail-form.component';
@@ -13,7 +12,6 @@ import { DetailFormComponent } from './components/detail-form/detail-form.compon
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListComponent,
     DetailStudentComponent,
     DetailFormComponent
   ],
