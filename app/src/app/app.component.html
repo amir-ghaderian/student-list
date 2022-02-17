@@ -1,7 +1,19 @@
 <app-header></app-header>
-<app-detail-form [student]="showingStudent"></app-detail-form>
+
+
+<ul id="nameStudent" class="flex flex-col " >
+    <li *ngFor="let student of students">{{student.firstName}} {{student.lastName}} {{student.id}}</li>
+</ul>
+
+
+
+<div class="kkkkkkk">
+    <app-detail-form [student]="showingStudent"></app-detail-form>
+</div>
+
 
 
 <a (click)="showSecond()">SHOW STUDENT 2</a><br/>
 <a (click)="showFirst()">SHOW STUDENT 1</a><br/>
+<a (click)="showThird()">SHOW STUDENT 3</a><br/>
 <router-outlet></router-outlet>
