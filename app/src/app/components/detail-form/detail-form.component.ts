@@ -13,7 +13,7 @@ export class DetailFormComponent implements OnInit {
                               lastName : '',
                             };
 
-  // firstName = 'javad'
+
 
   ngOnInit(): void {
   }
