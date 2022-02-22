@@ -42,7 +42,7 @@ export class AppComponent {
     for (var i = 0; i < this.students.length; i++){
       if(this.students[i].id===id){
         this.showingStudent = this.students[i];
-       
+   
       }
     }
   
