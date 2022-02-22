@@ -13,6 +13,8 @@ export class AppComponent {
     lastName: '',
   };
 
+  selectedId = 0;
+
   showigLesson = {
     lessonName: '',
     teacher: '',

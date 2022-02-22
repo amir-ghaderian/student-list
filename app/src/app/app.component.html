@@ -5,7 +5,7 @@
         <li class="cursor-pointer" *ngFor="let student of students let i= index"(click)="showStudentById(student.id)">{{student.firstName}}
             {{student.lastName}}{{i}} </li>
     </ul>
-
+    {{selectedId}}
     <div class="flex flex-col justify-between">
         <div class="w-96 text-left "> <span>firstName</span></div>
         <div class="w-96 text-left"> <span> lastName</span></div>
