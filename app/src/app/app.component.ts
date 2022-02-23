@@ -28,33 +28,34 @@ export class AppComponent {
     { firstName: "houman", lastName: "ghaderian", age: 42, dateBirth: "1977", code: "0032244455", job: "CEO", lesson: [5, 46, 3], id: 5, picProfile: "ASD.PNG" },
     { firstName: "hani", lastName: "ghaderian", age: 47, dateBirth: "1977", code: "32488488493", job: "teacher", lesson: [5], id: 22, picProfile: "3.jpeg" }];
 
-   classes:Array<any> =[
-      { title: 'HTML5', id: 1, teacher: " mr behnam khani", capacity: 3, numberOfStudents: 0 },
-      { title: 'CSS', id: 24, teacher: "mr behnam khani", capacity: 2, numberOfStudents: 0 },
-      { title: 'GIT', id: 3, teacher: "mr houman ", capacity: 5, numberOfStudents: 0 },
-      { title: 'ANGULAR', id: 46, teacher: "mr mosh hamedani", capacity: 40, numberOfStudents: 0 },
-      { title: 'ENGLISH', id: 5, teacher: "mr hormoz fassih", capacity: 5, numberOfStudents: 0 },
-      { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
+  classes: Array<any> = [
+    { title: 'HTML5', id: 1, teacher: " mr behnam khani", capacity: 3, numberOfStudents: 0 },
+    { title: 'CSS', id: 24, teacher: "mr behnam khani", capacity: 2, numberOfStudents: 0 },
+    { title: 'GIT', id: 3, teacher: "mr houman ", capacity: 5, numberOfStudents: 0 },
+    { title: 'ANGULAR', id: 46, teacher: "mr mosh hamedani", capacity: 40, numberOfStudents: 0 },
+    { title: 'ENGLISH', id: 5, teacher: "mr hormoz fassih", capacity: 5, numberOfStudents: 0 },
+    { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
   ];
 
 
 
   showStudentById(id: number) {
-   
-    for (var i = 0; i < this.students.length; i++){
-      if(this.students[i].id===id){
+
+    for (var i = 0; i < this.students.length; i++) {
+      if (this.students[i].id === id) {
         this.showingStudent = this.students[i];
-   
+        this.selectedId = i;
+        
       }
     }
-  
+
 
   }
-  showLessonById(id: number){
-    for (var i = 0; i < this.classes.length; i++){
-      if(this.classes[i].id===id){
+  showLessonById(id: number) {
+    for (var i = 0; i < this.classes.length; i++) {
+      if (this.classes[i].id === id) {
         this.showigLesson = this.classes[i];
-       
+
       }
     }
   }
