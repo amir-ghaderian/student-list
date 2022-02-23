@@ -2,10 +2,11 @@
 <div class=" flex justify-around border-red-500 rounded-b-md bg-green-200  mx-4 m-8 p-2 rounded-2xl relative...">
 
     <ul id="nameStudent" class="flex flex-col ">
-        <li class="cursor-pointer" *ngFor="let student of students let i= index"(click)="showStudentById(student.id)">{{student.firstName}}
-            {{student.lastName}}{{i}} </li>
+        <li class="cursor-pointer" *ngFor="let student of students let i= index" (click)="showStudentById(student.id)">
+            {{student.firstName}}
+            {{student.lastName}} </li>
     </ul>
-    {{selectedId}}
+{{selectedId}}
     <div class="flex flex-col justify-between">
         <div class="w-96 text-left "> <span>firstName</span></div>
         <div class="w-96 text-left"> <span> lastName</span></div>
@@ -18,19 +19,27 @@
     <app-detail-form [student]="showingStudent"></app-detail-form>
 
 </div>
-<div class="flex justify-around border-red-500 rounded-b-md bg-blue-200 mx-4 m-8 p-4 rounded-2xl">
+<button class="rounded-b-md bg-blue-200 mx-4 m-8 p-4 rounded-2xl" (click)="show = !show">{{show ? 'hide lesson' : 'show lesson'}}</button>
+<div class="flex justify-around border-red-500 rounded-b-md bg-blue-200 mx-4 m-8 p-4 rounded-2xl" *ngIf="show">
+
     <ul id="list-disc">
-<li class="cursor-pointer" *ngFor=' let lesson of classes ' (click)="showLessonById(lesson.id)">{{lesson.title}}</li>
+        <li class="cursor-pointer" *ngFor=' let lesson of classes ' (click)="showLessonById(lesson.id)">{{lesson.title}}
+        </li>
     </ul>
+  
     <div class="flex-col ">
         <div class="w-96  py-1.5"><span>class Name </span> </div>
         <div class="w-96  py-1.5"><span> teacher Name </span></div>
         <div class="w-96  py-1.5"> <span>class Number</span></div>
         <div class="w-96  py-1.5"><span>capacity</span></div>
-       
+
 
 
     </div>
     <app-lessons [lesson]="showigLesson"></app-lessons>
 </div>
+
+
+
+
 <router-outlet></router-outlet>

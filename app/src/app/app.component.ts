@@ -14,6 +14,7 @@ export class AppComponent {
   };
 
   selectedId = 0;
+  show = true;
 
   showigLesson = {
     lessonName: '',
@@ -44,7 +45,7 @@ export class AppComponent {
     for (var i = 0; i < this.students.length; i++) {
       if (this.students[i].id === id) {
         this.showingStudent = this.students[i];
-        this.selectedId = i;
+        this.selectedId = this.students[i].id;
         
       }
     }
