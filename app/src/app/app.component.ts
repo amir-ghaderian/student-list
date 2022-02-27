@@ -14,11 +14,13 @@ export class AppComponent {
   };
 
   selectedId = 0;
+  selectedLessonId=0;
   show = true;
 
   showigLesson = {
     lessonName: '',
     teacher: '',
+   
   };
 
   @Input('class')
@@ -57,6 +59,7 @@ export class AppComponent {
     for (var i = 0; i < this.classes.length; i++) {
       if (this.classes[i].id === id) {
         this.showigLesson = this.classes[i];
+        this.selectedLessonId=this.classes[i].id;
 
       }
     }

@@ -22,10 +22,10 @@
 <div class="flex justify-around border-red-500 rounded-b-md bg-blue-200 mx-4 m-8 p-4 rounded-2xl" *ngIf="show">
 
     <ul id="list-disc">
-        <li class="cursor-pointer" *ngFor=' let lesson of classes ' (click)="showLessonById(lesson.id)">{{lesson.title}}
+        <li class="cursor-pointer" *ngFor=' let lesson of classes ' (click)="showLessonById(lesson.id)" [ngClass]="{'bg-red-300 rounded-xl':selectedLessonId===lesson.id}">{{lesson.title}}
         </li>
     </ul>
-  
+    
     <div class="flex-col ">
         <div class="w-96  py-1.5"><span>class Name </span> </div>
         <div class="w-96  py-1.5"><span> teacher Name </span></div>

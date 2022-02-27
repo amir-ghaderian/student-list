@@ -10,7 +10,7 @@ export class LessonsComponent implements OnInit {
   constructor() { }
   @Input() lesson: any = { lessonName : '',
                               teacher : '',
-                            
+                               id:0
                             };
   ngOnInit(): void {
   }
