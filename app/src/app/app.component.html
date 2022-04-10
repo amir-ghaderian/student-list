@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <div class=" flex justify-around border-red-500 rounded-b-md bg-green-200  mx-4 m-8 p-2 rounded-2xl relative...">
 
     <ul id="nameStudent" class="flex flex-col "  >
@@ -13,8 +14,11 @@
         <div class="w-96 text-left"> <span>year of birth</span></div>
         <div class="w-96 text-left"> <span> code</span></div>
     </div>
-
-
+    
+        
+    <button (click)="modalService.open('modal-1')" class="transition duration-500 ease-in-out bg-blue-300 hover:bg-red-400 transform hover:-translate-y-1 hover:scale-110  p-2 rounded-2xl w-16  ">add</button>
+    <jw-modal id="modal-1">
+</jw-modal>
     <app-detail-form [student]="showingStudent"></app-detail-form>
    
 </div>
