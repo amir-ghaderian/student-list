@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ModalService } from './components/_modal';
 
 @Component({
@@ -8,7 +8,13 @@ import { ModalService } from './components/_modal';
 })
 export class AppComponent {
   title = 'app';
-
+  @Input() newStudent: any = {
+    newStudentName: '',
+    newStudentlastName: '',
+    newStudentJob: '',
+    newStudentBirth: '',
+    newStudentCode: '',
+  };
   showingStudent = {
     firstName: '',
     lastName: '',
@@ -23,7 +29,7 @@ export class AppComponent {
     teacher: '',
    
   };
-
+  
   @Input('class')
   klass: string | undefined;
   students: Array<any> = [
@@ -66,4 +72,10 @@ export class AppComponent {
     }
   }
  constructor(public modalService:ModalService){}
+ addStudent(){
+   this.students.push(this.newStudent)
+   
+   console.log(this.students)
+
+ }
 }

@@ -27,9 +27,9 @@
         </div>
         <div class="flex-col">
 
-            <div class="w-96 text-left"> <input  class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.newStudentName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="fname" value=""></div>
-            <div class="w-96 text-left"> <input  class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.newStudentlastName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="lname" value=""></div>
             <div class="w-96 text-left"> <input  class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="job" value=""></div>
@@ -38,7 +38,7 @@
             <div class="w-96 text-left"> <input class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="code" value=""></div>
 
-
+<button (click)="addStudent()">addnew</button>
         </div>
         <button id="close" (click)="modalService.close('modal-1')">X</button>
         
