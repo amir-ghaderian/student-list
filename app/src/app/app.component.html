@@ -64,6 +64,34 @@
 
     </div>
     <app-lessons [lesson]="showigLesson"></app-lessons>
+    <button (click)="modalService.open('modal-2')" >add lesson</button>
+    <jw-modal id="modal-2" class="flex">
+        <button id="close" (click)="modalService.close('modal-2')">X</button>
+ <div class="flex-col ">
+        <div class="w-96  py-1.5"><span>class Name </span> </div>
+        <div class="w-96  py-1.5"><span> teacher Name </span></div>
+        <div class="w-96  py-1.5"> <span>class Number</span></div>
+        <div class="w-96  py-1.5"><span>capacity</span></div>
+
+
+
+    </div>
+
+    <div class="flex-col ">
+        <div class="w-96 text-left"><input class="p1 w-96 rounded-lg  m-1" type="text"
+                id="className" value=""></div>
+        <div class="w-96 text-left"><input  class="p1 w-96 rounded-lg  m-1" type="text"
+                id="teacher" value=""></div>
+        <div class="w-96 text-left"><input class="p1 w-96 rounded-lg  m-1"
+                type="number" id="classNumber" value=""></div>
+        <div class="w-96 text-left"><input class="p1 w-96 rounded-lg  m-1"
+                type="number" id="classCapacytyInput" value=""></div>
+
+       
+
+    </div>
+
+    </jw-modal>
 </div>
 
 
