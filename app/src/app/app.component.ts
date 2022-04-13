@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalService } from './components/_modal';
 
 @Component({
@@ -9,11 +9,11 @@ import { ModalService } from './components/_modal';
 export class AppComponent {
   title = 'app';
   @Input() newStudent: any = {
-    newStudentName: '',
-    newStudentlastName: '',
-    newStudentJob: '',
-    newStudentBirth: '',
-    newStudentCode: '',
+    firstName: '',
+    lastName: '',
+    Job: '',
+    datetBirth: '',
+    code: '',
   };
   showingStudent = {
     firstName: '',
@@ -21,15 +21,15 @@ export class AppComponent {
   };
 
   selectedId = 0;
-  selectedLessonId=0;
+  selectedLessonId = 0;
   show = true;
 
   showigLesson = {
     lessonName: '',
     teacher: '',
-   
+
   };
-  
+
   @Input('class')
   klass: string | undefined;
   students: Array<any> = [
@@ -56,7 +56,7 @@ export class AppComponent {
       if (this.students[i].id === id) {
         this.showingStudent = this.students[i];
         this.selectedId = this.students[i].id;
-        
+
       }
     }
 
@@ -66,16 +66,17 @@ export class AppComponent {
     for (var i = 0; i < this.classes.length; i++) {
       if (this.classes[i].id === id) {
         this.showigLesson = this.classes[i];
-        this.selectedLessonId=this.classes[i].id;
+        this.selectedLessonId = this.classes[i].id;
 
       }
     }
   }
- constructor(public modalService:ModalService){}
- addStudent(){
-   this.students.push(this.newStudent)
-   
-   console.log(this.students)
+  constructor(public modalService: ModalService) { }
+  addStudent() {
+    this.students.push(this.newStudent)
 
- }
+    console.log(this.students)
+
+  }
 }
+1

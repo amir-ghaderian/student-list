@@ -27,15 +27,15 @@
         </div>
         <div class="flex-col">
 
-            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.newStudentName" class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.firstName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="fname" value=""></div>
-            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.newStudentlastName" class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.lastName" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="lname" value=""></div>
-            <div class="w-96 text-left"> <input  class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.job" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="job" value=""></div>
-            <div class="w-96 text-left"> <input  class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.dateBirth"  class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="dateBirth" value=""></div>
-            <div class="w-96 text-left"> <input class="p1 w-full rounded-lg bg-green-100 m-1"
+            <div class="w-96 text-left"> <input [(ngModel)]="newStudent.code" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="code" value=""></div>
 
 <button (click)="addStudent()">addnew</button>
