@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ModalService } from './components/_modal';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,10 @@ export class AppComponent {
     datetBirth: '',
     code: '',
   };
+  @Input() newLesson: any = {
+    title: "",
+    teacher: ""
+  }
   showingStudent = {
     firstName: '',
     lastName: '',
@@ -75,7 +80,10 @@ export class AppComponent {
   addStudent() {
     this.students.push(this.newStudent)
 
-  
 
+
+  }
+  addNewLesson() {
+    this.classes.push(this.newLesson)
   }
 }

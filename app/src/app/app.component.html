@@ -44,6 +44,7 @@
         
 </jw-modal>
     <app-detail-form [student]="showingStudent"></app-detail-form>
+    
    
 </div>
 <button class="rounded-b-md bg-blue-200 mx-4 m-8 p-4 rounded-2xl" (click)="show = !show">{{show ? 'hide lesson' : 'show lesson'}}</button>
@@ -53,7 +54,30 @@
         <li class="cursor-pointer" *ngFor=' let lesson of classes ' (click)="showLessonById(lesson.id)" [ngClass]="{'bg-red-300 rounded-xl':selectedLessonId===lesson.id}">{{lesson.title}}
         </li>
     </ul>
+    <jw-modal id="modal-2" >
+        <button id="close" (click)="modalService.close('modal-2')">X</button>
+ <div class="flex-col ">
+        <div class="w-96  py-1.5"><span>class Name </span> </div>
+        <div class="w-96  py-1.5"><span> teacher Name </span></div>
     
+
+
+
+    </div>
+
+    <div class="flex-col ">
+        <div class="w-96 text-left"><input [(ngModel)]="newLesson.title" class="p1 w-96 rounded-lg  m-1 border-2 border-gray-100" type="text"
+                id="className" value=""></div>
+        <div class="w-96 text-left"><input [(ngModel)]="newLesson.teacher" class="p1 w-96 rounded-lg  m-1 border-2 border-gray-100" type="text"
+                id="teacher" value=""></div>
+       
+
+
+    </div>
+    <button (click)="addNewLesson()" class="transition duration-500 ease-in-out bg-blue-300 hover:bg-red-400 transform hover:-translate-y-1 hover:scale-110  p-2 rounded-2xl w-16">add new lesson</button>
+
+    </jw-modal>
+
     <div class="flex-col ">
         <div class="w-96  py-1.5"><span>class Name </span> </div>
         <div class="w-96  py-1.5"><span> teacher Name </span></div>
@@ -63,7 +87,10 @@
 
 
     </div>
+    <button (click)="modalService.open('modal-2')"  class="transition duration-500 ease-in-out bg-blue-300 hover:bg-red-400 transform hover:-translate-y-1 hover:scale-110  p-2 rounded-2xl w-16">add </button>
+
     <app-lessons [lesson]="showigLesson"></app-lessons>
+    
 
 </div>
 
