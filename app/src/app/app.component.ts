@@ -75,8 +75,7 @@ export class AppComponent {
   addStudent() {
     this.students.push(this.newStudent)
 
-    console.log(this.students)
+  
 
   }
 }
-1

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from '../_modal/modal.service';
 
 @Component({
   selector: 'app-lessons',
@@ -7,12 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LessonsComponent implements OnInit {
 
-  constructor() { }
+  
   @Input() lesson: any = { lessonName : '',
                               teacher : '',
                                id:0
                             };
   ngOnInit(): void {
   }
-
+  constructor(public modalService: ModalService) { }
 }
