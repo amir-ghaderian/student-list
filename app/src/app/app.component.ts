@@ -79,11 +79,14 @@ export class AppComponent {
   constructor(public modalService: ModalService) { }
   addStudent() {
     this.students.push(this.newStudent)
+    this.modalService.close("modal-1");
+
 
 
 
   }
   addNewLesson() {
     this.classes.push(this.newLesson)
+    this.modalService.close("modal-2");
   }
 }
