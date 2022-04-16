@@ -18,7 +18,8 @@ export class AppComponent {
   };
   @Input() newLesson: any = {
     title: "",
-    teacher: ""
+    teacher: "",
+    capacity:""
   }
   showingStudent = {
     firstName: '',
@@ -87,7 +88,8 @@ export class AppComponent {
 
   }
   addNewLesson() {
-    this.classes.push(this.newLesson)
+    let customObj = this.newLesson;
+    this.classes.push({ title: customObj.title, teacher: customObj.teacher  ,capacity:customObj.capacity})
     this.modalService.close("modal-2");
   }
 }
