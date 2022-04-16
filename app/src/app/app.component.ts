@@ -12,8 +12,8 @@ export class AppComponent {
   @Input() newStudent: any = {
     firstName: '',
     lastName: '',
-    Job: '',
-    datetBirth: '',
+    job: '',
+    dateBirth: '',
     code: '',
   };
   @Input() newLesson: any = {
@@ -78,7 +78,8 @@ export class AppComponent {
   }
   constructor(public modalService: ModalService) { }
   addStudent() {
-    this.students.push(this.newStudent)
+    let customObj = this.newStudent;
+    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code })
     this.modalService.close("modal-1");
 
 
