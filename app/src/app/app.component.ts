@@ -19,7 +19,7 @@ export class AppComponent {
   @Input() newLesson: any = {
     title: "",
     teacher: "",
-    capacity:""
+    capacity: ""
   }
   showingStudent = {
     firstName: '',
@@ -80,7 +80,8 @@ export class AppComponent {
   constructor(public modalService: ModalService) { }
   addStudent() {
     let customObj = this.newStudent;
-    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code })
+    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code ,id:this.getUniqueId()})
+    console.log(this.students)
     this.modalService.close("modal-1");
 
 
@@ -89,7 +90,39 @@ export class AppComponent {
   }
   addNewLesson() {
     let customObj = this.newLesson;
-    this.classes.push({ title: customObj.title, teacher: customObj.teacher  ,capacity:customObj.capacity})
+    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity })
     this.modalService.close("modal-2");
   }
+  random() {
+    let item = Math.floor(Math.random() * 101)
+    return item;
+  }
+  isUnique(arr: string | any[], num: any) {
+    let len = arr.length;
+    let isUniq = true;
+    let i: number;
+    for (i = 0; i < len; i++) {
+      if (arr[i] == num) {
+        isUniq = false;
+      }
+    }
+    return isUniq;
+  }
+  getUniqueId() {
+    let existStudent = [];
+    let j: number;
+    for (j = 0; j < this.students.length; j++) {
+      existStudent.push(this.students[j].id);
+    }
+    let num = this.random()
+    while (!this.isUnique(existStudent, num)) {
+      num = this.random()
+
+    }
+
+    return num;
+
+
+  }
 }
+
