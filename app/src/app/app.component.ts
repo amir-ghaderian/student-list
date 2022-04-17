@@ -80,7 +80,7 @@ export class AppComponent {
   constructor(public modalService: ModalService) { }
   addStudent() {
     let customObj = this.newStudent;
-    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code ,id:this.getUniqueId()})
+    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() })
     console.log(this.students)
     this.modalService.close("modal-1");
 
@@ -90,7 +90,7 @@ export class AppComponent {
   }
   addNewLesson() {
     let customObj = this.newLesson;
-    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity })
+    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass() })
     this.modalService.close("modal-2");
   }
   random() {
@@ -124,5 +124,18 @@ export class AppComponent {
 
 
   }
+  getUniqueIdForClass() {
+    let existClass = [];
+    let k: number;
+    for (k = 0; k < this.classes.length; k++) {
+      existClass.push(this.classes[k].id);
+    }
+    let numId = this.random()
+    while (!this.isUnique(existClass, numId)) {
+      numId = this.random()
+    }
+    return numId;
+  }
+
 }
 
