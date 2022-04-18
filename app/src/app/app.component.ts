@@ -54,7 +54,7 @@ export class AppComponent {
     { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
   ];
 
-
+ 
 
   showStudentById(id: number) {
 
@@ -77,7 +77,9 @@ export class AppComponent {
       }
     }
   }
-  constructor(public modalService: ModalService) { }
+  constructor(public modalService: ModalService) { 
+    this.calculatingCapacity()
+  }
   addStudent() {
     let customObj = this.newStudent;
     this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() })
@@ -136,6 +138,20 @@ export class AppComponent {
     }
     return numId;
   }
+calculatingCapacity() {
+    for (let r = 0; r < this.students.length; r++) {
+        for (let v = 0; v < this.students[r].lesson.length; v++) {
+            for (let w = 0; w < this.classes.length; w++) {
+                if (this.students[r].lesson[v] === this.classes[w].id) {
+                    this.classes[w].numberOfStudents++;
+                    
+                }
+            }
+        }
+    }
+}
 
 }
+
+
 

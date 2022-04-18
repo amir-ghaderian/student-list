@@ -11,7 +11,7 @@ export class LessonsComponent implements OnInit {
   
   @Input() lesson: any = { lessonName : '',
                               teacher : '',
-                               id:0
+                              
                             };
   ngOnInit(): void {
   }
