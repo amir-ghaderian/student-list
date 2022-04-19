@@ -9,12 +9,17 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isMasterSel: boolean = false;
+  categorylist: any;
+  checkedCategoryList: any;
+
   @Input() newStudent: any = {
     firstName: '',
     lastName: '',
     job: '',
     dateBirth: '',
     code: '',
+   
   };
   @Input() newLesson: any = {
     title: "",
@@ -25,7 +30,7 @@ export class AppComponent {
     firstName: '',
     lastName: '',
   };
-  
+
   selectedId = 0;
   selectedLessonId = 0;
   show = true;
@@ -35,7 +40,7 @@ export class AppComponent {
     teacher: '',
 
   };
- 
+
   @Input('class')
   klass: string | undefined;
   students: Array<any> = [
@@ -54,7 +59,7 @@ export class AppComponent {
     { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
   ];
 
- 
+
 
   showStudentById(id: number) {
 
@@ -77,17 +82,21 @@ export class AppComponent {
       }
     }
   }
-  constructor(public modalService: ModalService) { 
+  constructor(public modalService: ModalService) {
     this.calculatingCapacity()
+    this.isMasterSel = false;
+    this.getCheckedItemList();
+
   }
   addStudent() {
     let customObj = this.newStudent;
-    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() })
-    console.log(this.students)
+    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() ,
+    lesson:this.getCheckedItemList()})
+
     this.modalService.close("modal-1");
 
 
-
+console.log(this.students)
 
   }
   addNewLesson() {
@@ -138,19 +147,43 @@ export class AppComponent {
     }
     return numId;
   }
-calculatingCapacity() {
+  calculatingCapacity() {
     for (let r = 0; r < this.students.length; r++) {
-        for (let v = 0; v < this.students[r].lesson.length; v++) {
-            for (let w = 0; w < this.classes.length; w++) {
-                if (this.students[r].lesson[v] === this.classes[w].id) {
-                    this.classes[w].numberOfStudents++;
-                    
-                }
-            }
-        }
-    }
-}
+      for (let v = 0; v < this.students[r].lesson.length; v++) {
+        for (let w = 0; w < this.classes.length; w++) {
+          if (this.students[r].lesson[v] === this.classes[w].id) {
+            this.classes[w].numberOfStudents++;
 
+          }
+        }
+      }
+    }
+  }
+  checkUncheckAll() {
+    for (var i = 0; i < this.classes.length; i++) {
+      this.classes[i].isSelected = this.isMasterSel;
+    }
+    this.getCheckedItemList();
+  }
+  isAllSelected() {
+    this.isMasterSel = this.classes.every(function (item: any) {
+      return item.isSelected == true;
+    })
+    this.getCheckedItemList();
+  }
+  getCheckedItemList() {
+    this.checkedCategoryList = [];
+    for (var i = 0; i < this.classes.length; i++) {
+      if (this.classes[i].isSelected)
+        this.checkedCategoryList.push(this.classes[i].id);
+       
+    }
+    this.checkedCategoryList = JSON.stringify(this.checkedCategoryList);
+    console.log(this.checkedCategoryList)
+    return this.checkedCategoryList;
+ 
+  }
+ 
 }
 
 
