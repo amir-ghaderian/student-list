@@ -25,7 +25,7 @@ export class AppComponent {
     firstName: '',
     lastName: '',
   };
-
+  
   selectedId = 0;
   selectedLessonId = 0;
   show = true;
@@ -35,7 +35,7 @@ export class AppComponent {
     teacher: '',
 
   };
-
+ 
   @Input('class')
   klass: string | undefined;
   students: Array<any> = [

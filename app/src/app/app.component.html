@@ -5,7 +5,8 @@
     <ul id="nameStudent" class="flex flex-col "  >
         <li class="cursor-pointer" *ngFor="let student of students let i= index" (click)="showStudentById(student.id)" [ngClass]="{'bg-red-300 rounded-xl':student.id === selectedId}">
             {{student.firstName}}
-            {{student.lastName}}  </li>
+            {{student.lastName}} 
+        </li>
     </ul>
     <div class="flex flex-col justify-between">
         <div class="w-96 text-left "> <span>firstName</span></div>
@@ -38,8 +39,14 @@
             <div class="w-96 text-left"> <input [(ngModel)]="newStudent.code" class="p1 w-full rounded-lg bg-green-100 m-1"
                     type="text" placeholder="" id="code" value=""></div>
 
-<button (click)="addStudent()">addnew</button>
+<button (click)="addStudent()" class="rounded-b-md bg-blue-200 mx-4  rounded-2xl">addnew</button>
         </div>
+        <div class=" flex flex-col items-end pl-4">
+        <div *ngFor="let class of  classes let i= index" >
+            <span>{{class.title}}<input type="checkbox" ></span>
+                
+        </div>
+            </div>
         <button id="close" (click)="modalService.close('modal-1')">X</button>
         
 </jw-modal>

@@ -18,8 +18,5 @@ export class DetailFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addStudent() {
-    console.log(this.student.firstName)
-    ///how to push json object into array in typescript?
-  }
+  
 }
