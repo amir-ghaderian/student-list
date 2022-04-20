@@ -47,7 +47,10 @@ export class AppComponent {
     this.newStudent.job = ' ';
     this.newStudent.dateBirth = ' ';
     this.newStudent.code = ' ';
-    this.checkUncheckAll()
+    this.newLesson.title = "";
+    this.newLesson.teacher = "";
+    this.newLesson.capacity = "";
+    this.checkUncheckAll();
   }
 
   @Input('class')
@@ -107,7 +110,7 @@ export class AppComponent {
     })
     this.modalService.close("modal-1");
 
-    this.handleClear()
+    this.handleClear();
 
 
   }
@@ -115,6 +118,7 @@ export class AppComponent {
     let customObj = this.newLesson;
     this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass() })
     this.modalService.close("modal-2");
+    this.handleClear()
   }
   random() {
     let item = Math.floor(Math.random() * 101)
