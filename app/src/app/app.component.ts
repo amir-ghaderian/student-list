@@ -88,6 +88,7 @@ export class AppComponent {
     this.getCheckedItemList();
 
   }
+  
   addStudent() {
     let customObj = this.newStudent;
     this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() ,
@@ -159,18 +160,7 @@ console.log(this.students)
       }
     }
   }
-  checkUncheckAll() {
-    for (var i = 0; i < this.classes.length; i++) {
-      this.classes[i].isSelected = this.isMasterSel;
-    }
-    this.getCheckedItemList();
-  }
-  isAllSelected() {
-    this.isMasterSel = this.classes.every(function (item: any) {
-      return item.isSelected == true;
-    })
-    this.getCheckedItemList();
-  }
+ 
   getCheckedItemList() {
     this.checkedCategoryList = [];
     for (var i = 0; i < this.classes.length; i++) {
@@ -178,7 +168,7 @@ console.log(this.students)
         this.checkedCategoryList.push(this.classes[i].id);
        
     }
-    this.checkedCategoryList = JSON.stringify(this.checkedCategoryList);
+    
     console.log(this.checkedCategoryList)
     return this.checkedCategoryList;
  
