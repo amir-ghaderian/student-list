@@ -19,7 +19,7 @@ export class AppComponent {
     job: '',
     dateBirth: '',
     code: '',
-   
+
   };
   @Input() newLesson: any = {
     title: "",
@@ -40,6 +40,15 @@ export class AppComponent {
     teacher: '',
 
   };
+
+  handleClear() {
+    this.newStudent.firstName = ' ';
+    this.newStudent.lastName = ' ';
+    this.newStudent.job = ' ';
+    this.newStudent.dateBirth = ' ';
+    this.newStudent.code = ' ';
+    this.checkUncheckAll()
+  }
 
   @Input('class')
   klass: string | undefined;
@@ -83,21 +92,23 @@ export class AppComponent {
     }
   }
   constructor(public modalService: ModalService) {
-    this.calculatingCapacity()
-    this.isMasterSel = false;
+
+    this.calculatingCapacity();
     this.getCheckedItemList();
+    this.isMasterSel = false;
 
   }
-  
+
   addStudent() {
     let customObj = this.newStudent;
-    this.students.push({ firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId() ,
-    lesson:this.getCheckedItemList()})
-
+    this.students.push({
+      firstName: customObj.firstName, lastName: customObj.lastName, job: customObj.job, dateBirth: customObj.dateBirth, code: customObj.code, id: this.getUniqueId(),
+      lesson: this.getCheckedItemList()
+    })
     this.modalService.close("modal-1");
 
+    this.handleClear()
 
-console.log(this.students)
 
   }
   addNewLesson() {
@@ -160,21 +171,23 @@ console.log(this.students)
       }
     }
   }
- 
+
   getCheckedItemList() {
     this.checkedCategoryList = [];
     for (var i = 0; i < this.classes.length; i++) {
       if (this.classes[i].isSelected)
         this.checkedCategoryList.push(this.classes[i].id);
-       
+
     }
-    
+
     console.log(this.checkedCategoryList)
     return this.checkedCategoryList;
- 
+
   }
- 
+  checkUncheckAll() {
+    for (var i = 0; i < this.classes.length; i++) {
+      this.classes[i].isSelected = this.isMasterSel;
+    }
+    this.getCheckedItemList();
+  }
 }
-
-
-
