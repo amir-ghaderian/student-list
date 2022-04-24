@@ -38,6 +38,7 @@ export class AppComponent {
   showigLesson = {
     lessonName: '',
     teacher: '',
+    capacity: 0,
 
   };
 
@@ -51,6 +52,8 @@ export class AppComponent {
     this.newLesson.teacher = "";
     this.newLesson.capacity = "";
     this.checkUncheckAll();
+    this.calculatingCapacity();
+
   }
 
   @Input('class')
@@ -74,13 +77,24 @@ export class AppComponent {
 
 
   showStudentById(id: number) {
+ 
 
     for (var i = 0; i < this.students.length; i++) {
+
       if (this.students[i].id === id) {
         this.showingStudent = this.students[i];
         this.selectedId = this.students[i].id;
+        for (var f = 0; f < this.students[i].lesson.length; f++) {
+          for (var j = 0; j < this.classes.length; j++) {
+            if (this.students[i].lesson[f] == this.classes[j].id) {
+             console.log(this.classes[j].title);
 
+              
+            }
+          }
+        }
       }
+
     }
 
 
@@ -96,8 +110,8 @@ export class AppComponent {
   }
   constructor(public modalService: ModalService) {
 
-    this.calculatingCapacity();
     this.getCheckedItemList();
+
     this.isMasterSel = false;
 
   }
@@ -116,7 +130,7 @@ export class AppComponent {
   }
   addNewLesson() {
     let customObj = this.newLesson;
-    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass() })
+    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass(), numberOfStudent: this.calculatingCapacity() })
     this.modalService.close("modal-2");
     this.handleClear()
   }
@@ -163,7 +177,7 @@ export class AppComponent {
     }
     return numId;
   }
-  calculatingCapacity() {
+  calculatingCapacity(): void {
     for (let r = 0; r < this.students.length; r++) {
       for (let v = 0; v < this.students[r].lesson.length; v++) {
         for (let w = 0; w < this.classes.length; w++) {
