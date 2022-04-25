@@ -3,11 +3,12 @@
 <div class=" flex justify-around border-red-500 rounded-b-md bg-green-200  mx-4 m-8 p-2 rounded-2xl relative...">
 
     <ul id="nameStudent" class="flex flex-col "  >
-        <li class="cursor-pointer" *ngFor="let student of students let i= index" (click)="showStudentById(student.id)" [ngClass]="{'bg-red-300 rounded-xl':student.id === selectedId}">
+        <li class="cursor-pointer" *ngFor="let student of students let i= index" (click)="showStudentById(student.id)" [ngClass]="{'bg-red-300 rounded-xl':student.id === selectedId}" >
             {{student.firstName}}
             {{student.lastName}} 
         </li>
     </ul>
+    {{showingStudent.lesson}}
     <div class="flex flex-col justify-between">
         <div class="w-96 text-left "> <span>firstName</span></div>
         <div class="w-96 text-left"> <span> lastName</span></div>

@@ -29,6 +29,7 @@ export class AppComponent {
   showingStudent = {
     firstName: '',
     lastName: '',
+    lesson:""
   };
 
   selectedId = 0;
@@ -41,6 +42,7 @@ export class AppComponent {
     capacity: 0,
 
   };
+  htmlToAdd: string | undefined;
 
   handleClear() {
     this.newStudent.firstName = ' ';
@@ -77,7 +79,8 @@ export class AppComponent {
 
 
   showStudentById(id: number) {
- 
+
+     
 
     for (var i = 0; i < this.students.length; i++) {
 
@@ -87,8 +90,7 @@ export class AppComponent {
         for (var f = 0; f < this.students[i].lesson.length; f++) {
           for (var j = 0; j < this.classes.length; j++) {
             if (this.students[i].lesson[f] == this.classes[j].id) {
-             console.log(this.classes[j].title);
-
+              console.log(this.classes[j].title)
               
             }
           }
@@ -130,7 +132,7 @@ export class AppComponent {
   }
   addNewLesson() {
     let customObj = this.newLesson;
-    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass(), numberOfStudent: this.calculatingCapacity() })
+    this.classes.push({ title: customObj.title, teacher: customObj.teacher, capacity: customObj.capacity, id: this.getUniqueIdForClass(), numberOfStudent: 0 })
     this.modalService.close("modal-2");
     this.handleClear()
   }
