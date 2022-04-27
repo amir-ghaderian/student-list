@@ -26,10 +26,11 @@ export class AppComponent {
     teacher: "",
     capacity: ""
   }
+  les: any[] = [""];
   showingStudent = {
     firstName: '',
     lastName: '',
-    lesson:""
+    lesson: this.les,
   };
 
   selectedId = 0;
@@ -80,18 +81,21 @@ export class AppComponent {
 
   showStudentById(id: number) {
 
-     
 
     for (var i = 0; i < this.students.length; i++) {
 
       if (this.students[i].id === id) {
         this.showingStudent = this.students[i];
         this.selectedId = this.students[i].id;
+
         for (var f = 0; f < this.students[i].lesson.length; f++) {
           for (var j = 0; j < this.classes.length; j++) {
+          
+
             if (this.students[i].lesson[f] == this.classes[j].id) {
-              console.log(this.classes[j].title)
-              
+              this.showingStudent.lesson.push(this.classes[j].title);
+              // this.showingStudent.lesson.concat(this.classes[j].title)
+              console.log(this.showingStudent.lesson);
             }
           }
         }
