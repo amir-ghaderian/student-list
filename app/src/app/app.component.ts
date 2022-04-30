@@ -12,6 +12,15 @@ export class AppComponent {
   isMasterSel: boolean = false;
   categorylist: any;
   checkedCategoryList: any;
+  name="";
+  classes: any = [
+    { title: 'HTML5', id: 1, teacher: " mr behnam khani", capacity: 3, numberOfStudents: 0 },
+    { title: 'CSS', id: 24, teacher: "mr behnam khani", capacity: 2, numberOfStudents: 0 },
+    { title: 'GIT', id: 3, teacher: "mr houman ", capacity: 5, numberOfStudents: 0 },
+    { title: 'ANGULAR', id: 46, teacher: "mr mosh hamedani", capacity: 40, numberOfStudents: 0 },
+    { title: 'ENGLISH', id: 5, teacher: "mr hormoz fassih", capacity: 5, numberOfStudents: 0 },
+    { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
+  ];
 
   @Input() newStudent: any = {
     firstName: '',
@@ -26,13 +35,13 @@ export class AppComponent {
     teacher: "",
     capacity: ""
   }
-  les: any[] = [""];
+  
   showingStudent = {
     firstName: '',
     lastName: '',
-    lesson: this.les,
+    lesson:[]=[],
   };
-
+  
   selectedId = 0;
   selectedLessonId = 0;
   show = true;
@@ -43,7 +52,7 @@ export class AppComponent {
     capacity: 0,
 
   };
-  htmlToAdd: string | undefined;
+  
 
   handleClear() {
     this.newStudent.firstName = ' ';
@@ -64,23 +73,14 @@ export class AppComponent {
   students: Array<any> = [
     { firstName: "ali", lastName: "ghaderian", age: 34, dateBirth: "1987", code: "0032244455", job: "designer", lesson: [1, 24], id: 11, picProfile: "ASDF.JPG" },
     { firstName: "amir", lastName: "ghaderian", age: 35, dateBirth: "1986", code: "0081125674", job: "front", lesson: [5, 24, 1, 3, 66], id: 4, picProfile: "1.jpeg" },
-    { firstName: "aida", lastName: "amiri", age: 20, dateBirth: "2001", code: "0032244455", job: "Airline employee", lesson: [1, 5, 66], id: 31, picProfile: "2.jpeg" },
+    { firstName: "aida", lastName: "amiri ", age: 20, dateBirth: "2001", code: "0032244455", job: "Airline employee", lesson: [1, 5, 66], id: 31, picProfile: "2.jpeg" },
     { firstName: "houman", lastName: "ghaderian", age: 42, dateBirth: "1977", code: "0032244455", job: "CEO", lesson: [5, 46, 3], id: 5, picProfile: "ASD.PNG" },
     { firstName: "hani", lastName: "ghaderian", age: 47, dateBirth: "1977", code: "32488488493", job: "teacher", lesson: [5], id: 22, picProfile: "3.jpeg" }];
 
-  classes: Array<any> = [
-    { title: 'HTML5', id: 1, teacher: " mr behnam khani", capacity: 3, numberOfStudents: 0 },
-    { title: 'CSS', id: 24, teacher: "mr behnam khani", capacity: 2, numberOfStudents: 0 },
-    { title: 'GIT', id: 3, teacher: "mr houman ", capacity: 5, numberOfStudents: 0 },
-    { title: 'ANGULAR', id: 46, teacher: "mr mosh hamedani", capacity: 40, numberOfStudents: 0 },
-    { title: 'ENGLISH', id: 5, teacher: "mr hormoz fassih", capacity: 5, numberOfStudents: 0 },
-    { title: 'JavaScript', id: 66, teacher: "mr amin rad", capacity: 3, numberOfStudents: 0 },
-  ];
-
+  
 
 
   showStudentById(id: number) {
-
 
     for (var i = 0; i < this.students.length; i++) {
 
@@ -88,17 +88,7 @@ export class AppComponent {
         this.showingStudent = this.students[i];
         this.selectedId = this.students[i].id;
 
-        for (var f = 0; f < this.students[i].lesson.length; f++) {
-          for (var j = 0; j < this.classes.length; j++) {
-          
-
-            if (this.students[i].lesson[f] == this.classes[j].id) {
-              this.showingStudent.lesson.push(this.classes[j].title);
-              // this.showingStudent.lesson.concat(this.classes[j].title)
-              console.log(this.showingStudent.lesson);
-            }
-          }
-        }
+     
       }
 
     }
