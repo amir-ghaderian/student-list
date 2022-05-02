@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent implements OnInit {
-  
-    cars= [
-       "audi","renu","bmw","tesla","gm","toyota"
-      ]
+
+  carExhibition: any = [
+    { company: "nissan", model: ["maxima", "skyline", "joke"] },
+    { company: "benz", model: ["e200", "cls", "sls"] },
+    { company: "bmw", model: ["i8", "320i", "X6"] },
+    { company: "ford", model: ["taurus", "mustang", "Escort"] }
+  ]
 
   constructor() { }
 

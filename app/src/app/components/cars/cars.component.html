@@ -1,3 +1,6 @@
-<div *ngFor="let car of cars">
-{{car}}
+<div *ngFor="let car of carExhibition">
+<p>{{car.company}}</p>
+<div class="flex  ">
+<p *ngFor="let name of car.model"  class="p-4 bg-red-100">{{name}}</p>
+</div>
 </div>
