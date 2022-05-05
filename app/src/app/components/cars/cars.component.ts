@@ -14,6 +14,7 @@ export class CarsComponent implements OnInit {
     { company: "ford", model: ["taurus", "mustang", "Escort"], id: 4 }
   ]
   selectedCar = 0;
+  show = true;
   constructor() { }
 
   ngOnInit(): void {
@@ -21,10 +22,10 @@ export class CarsComponent implements OnInit {
 
 
   showingCar(id: number) {
-    console.log(id);
+   
     for (var i = 0; i < this.carExhibition.length; i++) {
       if (this.carExhibition[i].id === id) {
-        this.selectedCar = this.carExhibition[i].id; 
+        this.selectedCar = this.carExhibition[i].id;
         console.log(this.carExhibition[i].company)
       }
     }
