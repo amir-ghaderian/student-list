@@ -11,10 +11,11 @@ export class CarsComponent implements OnInit {
     { company: "nissan", model: ["maxima", "skyline", "joke"], id: 1 },
     { company: "benz", model: ["e200", "cls", "sls"], id: 2 },
     { company: "bmw", model: ["i8", "320i", "X6"], id: 3 },
-    { company: "ford", model: ["taurus", "mustang", "Escort"], id: 4 }
+    { company: "ford", model: ["taurus", "mustang", "Escort",'lincoln'], id: 4 }
   ]
   selectedCar = 0;
   show = true;
+  
   constructor() { }
 
   ngOnInit(): void {
