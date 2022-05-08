@@ -9,6 +9,7 @@ import { DetailStudentComponent } from './detail-student/detail-student.componen
 import { FormsModule } from '@angular/forms';
 import { DetailFormComponent } from './components/detail-form/detail-form.component';
 import { LessonsComponent } from './components/lessons/lessons.component';
+import { ClothesComponent } from './components/clothes/clothes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LessonsComponent } from './components/lessons/lessons.component';
     DetailStudentComponent,
     DetailFormComponent,
     LessonsComponent,
-    routingComponents
+    routingComponents,
+    ClothesComponent
   
   ],
   imports: [
