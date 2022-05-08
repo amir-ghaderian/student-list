@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class CarsComponent implements OnInit {
 
   carExhibition: any = [
-    { company: "nissan", model: ["maxima", "skyline", "joke"], id: 1 },
-    { company: "benz", model: ["e200", "cls", "sls"], id: 2 },
-    { company: "bmw", model: ["i8", "320i", "X6"], id: 3 },
-    { company: "ford", model: ["taurus", "mustang", "Escort",'lincoln'], id: 4 }
+    { company: "nissan", model: ["maxima", "skyline", "joke"], id: 0 },
+    { company: "benz", model: ["e200", "cls", "sls"], id: 1 },
+    { company: "bmw", model: ["i8", "320i", "X6"], id: 2 },
+    { company: "ford", model: ["taurus", "mustang", "Escort",'lincoln'], id: 3 }
   ]
   selectedCar = 0;
   show = true;

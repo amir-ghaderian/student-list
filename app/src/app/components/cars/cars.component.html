@@ -1,7 +1,7 @@
 <div *ngFor="let car of carExhibition let i=index" > 
-<p class="text-xl cursor-pointer " (click)="showingCar(car.id) " [ngClass]="{'bg-red-300 rounded-xl':car.id === selectedCar}" >{{car.company}}<br>number of models:{{car.model.length}}</p>
-<div class="flex flex-col "*ngFor="let name of car.model" (click)="show" >
-<div *ngIf="{show:i===selectedCar}">
+<p class="text-xl cursor-pointer " (click)="showingCar(i) " [ngClass]="{'bg-red-300 rounded-xl':i === selectedCar}" >{{car.company}}<span class="bg-blue-200 text-l rounded-xl">{{car.model.length}}</span></p>
+<div class="flex flex-col "*ngFor="let name of car.model" >
+<div *ngIf="i===selectedCar ?true:false">
 <p   class="p-4 bg-red-100 " >{{name}}</p>
 
 </div>
