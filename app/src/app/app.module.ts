@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailFormComponent } from './components/detail-form/detail-form.component';
 import { LessonsComponent } from './components/lessons/lessons.component';
 import { ClothesComponent } from './components/clothes/clothes.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ClothesComponent } from './components/clothes/clothes.component';
     DetailFormComponent,
     LessonsComponent,
     routingComponents,
-    ClothesComponent
+    ClothesComponent,
+    StudentListComponent
   
   ],
   imports: [
