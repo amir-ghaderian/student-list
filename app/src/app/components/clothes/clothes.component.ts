@@ -26,6 +26,7 @@ export class ClothesComponent implements OnInit {
   ngOnInit(): void {
   }
 showingImage(id:number){
-console.log(id)
+console.log(this.clothes[id])
+
 }
 }
