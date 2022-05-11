@@ -13,7 +13,7 @@ export class ClothesComponent implements OnInit {
     { title: 1113, images: ["assets/pic/4.jpg", "assets/pic/10.jpg"] },
     { title: 1114, images: ["assets/pic/5.jpg", "assets/pic/9.jpg", "assets/pic/5.jpg", "assets/pic/6.jpg"] },
     { title: 1115, images: ["assets/pic/6.jpg", "assets/pic/8.jpg"] },
-    { title: 1116, images: ["assets/pic/7.jpg", "assets/pic/7.jpg"] },
+    { title: 1116, images: ["assets/pic/7.jpg", "assets/pic/3.jpg"] },
     { title: 1117, images: ["assets/pic/8.jpg"] },
     { title: 1118, images: ["assets/pic/9.jpg", "assets/pic/5.jpg"] },
     { title: 1119, images: ["assets/pic/10.jpg", "assets/pic/4.jpg"] },
@@ -25,10 +25,12 @@ export class ClothesComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  showingImage(id: number) {
-    let titleImage = this.clothes[id].title;
-    let imageParent = this.clothes[id].images[0];
-    console.log(imageParent);
+  showingImage(id: number){
+   
+    let imagesTag = this.clothes[id].images;
+    imagesTag.push(imagesTag.splice(0, 1)[0]);
+  
+
 
   }
 }
