@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { findIndex } from 'rxjs';
 
 @Component({
   selector: 'app-clothes',
@@ -22,17 +21,29 @@ export class ClothesComponent implements OnInit {
     { title: 1122, images: ["assets/pic/12.jpg", "assets/pic/2.jpg"] },
     { title: 1123, images: ["assets/pic/13.jpg", "assets/pic/1.jpg"] }
   ]
-  constructor() { }
+   currentImge:string[]= [];
+ 
+  constructor() { 
+    for(var i=0;i<this.clothes.length;i++){
+      this.currentImge.push(this.clothes[i].images[0]);
+    
 
+     
+  }
+ 
+  }
+  
   ngOnInit(): void {
   }
   
   
-  showingImage(id: number) {
-
-    let imagesTag = this.clothes[id].images;
-    let titleImage = this.clothes[id].title;
-    console.log(titleImage)
+  showingImage(id:number) {
+    
+    
+    
+  
+   
+    console.log(id,this. currentImge)
     
 
 
