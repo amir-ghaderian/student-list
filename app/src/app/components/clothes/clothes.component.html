@@ -6,6 +6,7 @@
             <div *ngFor="let image of pic.images let l=index " class="inline-flex">
                 <span (click)="showingImage(l,i)" class="p-1  border-2 border-black-600">{{l+1}}</span>
             </div>
+            {{currentIndex[i]}}
         </div>
     </div>
 </div>
