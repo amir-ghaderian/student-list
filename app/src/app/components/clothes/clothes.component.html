@@ -1,7 +1,7 @@
 <div class="w-full flex justify-center">
     <div class="  flex flex-wrap max-w-screen-lg">
         <div class="text-center relative" *ngFor="let pic of clothes let i=index">{{pic.title}}
-            <div  style="background-image: url({{pic.images[0]}});"
+            <div  style="background-image: url({{currentImge[i]}});"
                 class="w-40 h-40 m-2 rounded-lg    bg-cover"></div>
             <div *ngFor="let image of pic.images let l=index " class="inline-flex">
                 <span (click)="showingImage(l+1)" class="p-1  border-2 border-black-600">{{l+1}}</span>
