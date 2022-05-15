@@ -37,13 +37,13 @@ export class ClothesComponent implements OnInit {
   }
   
   
-  showingImage(id:number) {
-    
+  showingImage(id:number,clothesNum:number) {
+    this.currentImge[clothesNum]=this.clothes[clothesNum].images[id];
     
     
   
    
-    console.log(id,this. currentImge)
+    console.log( this.clothes[clothesNum].images[id])
     
 
 
