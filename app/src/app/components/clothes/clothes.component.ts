@@ -23,6 +23,7 @@ export class ClothesComponent implements OnInit {
   ]
    currentImge:string[]= [];
    currentIndex:number[]=[];
+   
   constructor() { 
     for(var i=0;i<this.clothes.length;i++){
       this.currentImge.push(this.clothes[i].images[0]);
@@ -37,9 +38,10 @@ export class ClothesComponent implements OnInit {
   
   
   showingImage(id:number,clothesNum:number) {
-
+ 
     this.currentImge[clothesNum]=this.clothes[clothesNum].images[id];
-    this.currentIndex[clothesNum]=id+1;
+    this.currentIndex[clothesNum]=id;
+   
   
    
     console.log(this.currentIndex[clothesNum])

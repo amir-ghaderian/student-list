@@ -4,7 +4,7 @@
             <div  style="background-image: url({{currentImge[i]}});"
                 class="w-40 h-40 m-2 rounded-lg    bg-cover"></div>
             <div *ngFor="let image of pic.images let l=index " class="inline-flex">
-                <span (click)="showingImage(l,i)" class="p-1  border-2 border-black-600" [ngClass]="{'bg-red-300 rounded-xl':l+1 ===  currentIndex[i]}" >{{l+1}}</span>
+                <span (click)="showingImage(l,i)" class="p-1  border-2 border-black-600" [ngClass]="{'bg-gray-300 rounded-xl':l ===  currentIndex[i]}" >{{l+1}}</span>
             </div>
            
         </div>
