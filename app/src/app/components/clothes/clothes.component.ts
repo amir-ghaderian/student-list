@@ -21,33 +21,39 @@ export class ClothesComponent implements OnInit {
     { title: 1122, images: ["assets/pic/12.jpg", "assets/pic/2.jpg"] },
     { title: 1123, images: ["assets/pic/13.jpg", "assets/pic/1.jpg"] }
   ]
-   currentImge:string[]= [];
-   currentIndex:number[]=[];
-   
-  constructor() { 
-    for(var i=0;i<this.clothes.length;i++){
+  currentImge: string[] = [];
+  currentIndex: number[] = [];
+
+  constructor() {
+    for (var i = 0; i < this.clothes.length; i++) {
       this.currentImge.push(this.clothes[i].images[0]);
       this.currentIndex.push(0)
     }
-    
- 
+
+
   }
-  
+
   ngOnInit(): void {
   }
-  
-  
-  showingImage(id:number,clothesNum:number) {
- 
-    this.currentImge[clothesNum]=this.clothes[clothesNum].images[id];
-    this.currentIndex[clothesNum]=id;
-   
-  
-   
-    console.log(this.currentIndex[clothesNum])
-    
+
+
+  showingImage(id: number, clothesNum: number) {
+
+    this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
+    this.currentIndex[clothesNum] = id;
+
+  }
 
 
 
+  previousClothes(id: number) {
+    console.log(id)
+  }
+
+
+  nextClothes(id: number) {
+
+    this.currentImge[id] = this.clothes[id].images[1];
+    //console.log(this.currentImge[id],this.clothes[id].images[1])
   }
 }
