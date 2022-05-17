@@ -51,9 +51,10 @@ export class ClothesComponent implements OnInit {
   }
 
 
-  nextClothes(id: number,par:number) {
+  nextClothes(id: number,clothesNum:number) {
 
-    this.currentImge[id] = this.clothes[id].images[par];
-    console.log(this.clothes[id].images[par])
+    this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
+    this.currentIndex[clothesNum]=id;
+  
   }
 }
