@@ -23,6 +23,7 @@ export class ClothesComponent implements OnInit {
   ]
   currentImge: string[] = [];
   currentIndex: number[] = [];
+  click = 0;
 
   constructor() {
     for (var i = 0; i < this.clothes.length; i++) {
@@ -46,15 +47,22 @@ export class ClothesComponent implements OnInit {
 
 
 
-  previousClothes(id: number,par:number) {
-    console.log(id)
+  previousClothes(id: number, items: number) {
+    // this.click += 1
+    // this.currentImge[items] = this.clothes[items].images[this.click];
+    // this.currentIndex[items] = id;
+    // console.log(this.clothes[items].images)
+    // console.log(this.clothes[items].images[id])
+    
   }
 
 
-  nextClothes(id: number,clothesNum:number) {
+  nextClothes(id: number, clothesNum: number) {
+    this.click += 1
+    this.currentImge[clothesNum] = this.clothes[clothesNum].images[this.click];
+    this.currentIndex[clothesNum] = this.click;
+   
 
-    this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
-    this.currentIndex[clothesNum]=id;
-  
+   
   }
 }
