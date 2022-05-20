@@ -51,7 +51,6 @@ export class ClothesComponent implements OnInit {
     this.currentIndex[clothesNum] -= 1;
 
     this.currentImge[clothesNum] = this.clothes[clothesNum].images[this.currentIndex[clothesNum]];
-    this.currentIndex[clothesNum] = this.currentIndex[clothesNum];
 
 
   }
@@ -62,7 +61,6 @@ export class ClothesComponent implements OnInit {
 
     this.currentIndex[clothesNum] += 1
     this.currentImge[clothesNum] = this.clothes[clothesNum].images[this.currentIndex[clothesNum]];
-    this.currentIndex[clothesNum] = this.currentIndex[clothesNum];
 
 
 
