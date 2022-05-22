@@ -23,13 +23,13 @@ export class ClothesComponent implements OnInit {
   ]
   currentImge: string[] = [];
   currentIndex: number[] = [];
-  ///currentStars: number[] = [];
+  currentStars: number[] = [];
 
   constructor() {
     for (var i = 0; i < this.clothes.length; i++) {
       this.currentImge.push(this.clothes[i].images[0]);
       this.currentIndex.push(0)
-      ///this.currentStars.push(this.clothes[i].stars)
+      this.currentStars.push(this.clothes[i].stars)
 
     }
 

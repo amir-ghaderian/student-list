@@ -2,24 +2,24 @@
     <div class="  flex flex-wrap max-w-screen-lg">
         <div class="text-center relative" *ngFor="let pic of clothes let i=index">{{pic.title}}
             <div  style="background-image: url({{currentImge[i]}});"
-                class="w-40 h-40 m-2 rounded-lg  relative  bg-cover"></div>
-                <ul class="flex items-center gap-x-1  absolute top-6 right-2" [ngClass]="{'fas'  :clothes[i].stars}">
-                    <li>
-                      <i class="text-yellow-300 far fa-star"></i>
-                    </li>
-                    <li>
-                      <i class="text-yellow-300 far fa-star"></i>
-                    </li>
-                    <li>
-                      <i class="text-yellow-300 far fa-star"></i>
-                    </li>
-                    <li>
-                      <i class="text-yellow-300 far fa-star"></i>
-                    </li>
-                    <li>
-                      <i class="text-yellow-300 far fa-star"></i>
-                    </li>
-                  </ul>
+                class="w-40 h-40 m-2 rounded-lg  relative  bg-cover">
+                <ul class="flex items-center gap-x-1  absolute top-0 right-0" [ngClass]="{'fas fa-star text-yellow-300':pic.stars}">
+                  <li >
+                    <i  class="text-yellow-300 far fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="text-yellow-300 far fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="text-yellow-300 far fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="text-yellow-300 far fa-star"></i>
+                  </li>
+                 
+                </ul>
+              </div>
+                
             <div *ngFor="let image of pic.images let l=index " class="inline-flex">
                 <button (click)="previousClothes(l,i)" [ngClass]="{'hidden'  : 0 >=   this.currentIndex[i]}"  class="left-0 bottom-28 absolute text-gray-400 text-4xl font-extrabold"><</button>
                 <button (click)="nextClothes(l,i)" [ngClass]="{'hidden'  : pic.images.length-1 <=   this.currentIndex[i]}" class="right-0 bottom-28 absolute text-gray-400 text-4xl font-extrabold">></button>
