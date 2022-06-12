@@ -24,6 +24,8 @@ export class ClothesComponent implements OnInit {
   currentImge: string[] = [];
   currentIndex: number[] = [];
   currentStars: number[] = [];
+  
+  show=false;
 
   constructor() {
     for (var i = 0; i < this.clothes.length; i++) {

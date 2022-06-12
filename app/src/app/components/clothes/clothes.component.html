@@ -3,9 +3,9 @@
         <div class="text-center relative" *ngFor="let cloth of clothes let i=index">{{cloth.title}}
             <div  style="background-image: url({{currentImge[i]}});"
                 class="w-40 h-40 m-2 rounded-lg  relative  bg-cover">
-                <ul class="flex items-center gap-x-1  absolute top-0 right-0" [ngClass]="{'fas fa-star text-yellow-300':cloth.stars}">
+                <ul class="flex items-center gap-x-1  absolute top-0 right-0" >
                   <li >
-                    <i  class="text-yellow-300 far fa-star"></i>
+                    <i  class="text-yellow-300 far fa-star" *ngIf="currentStars[i] ===cloth.stars  "></i>
                   </li>
                   <li>
                     <i class="text-yellow-300 far fa-star"></i>
@@ -14,7 +14,10 @@
                     <i class="text-yellow-300 far fa-star"></i>
                   </li>
                   <li>
-                    <i class="text-yellow-300 far fa-star" *ngIf="cloth.stars >= 5"></i>
+                    <i class="text-yellow-300 far fa-star"></i>
+                  </li>
+                  <li>
+                    <i class="text-yellow-300 far fa-star"></i>
                   </li>
                  
                 </ul>
@@ -24,7 +27,7 @@
                 <button (click)="previousClothes(l,i)" [ngClass]="{'hidden'  : 0 >=   this.currentIndex[i]}"  class="left-0 bottom-28 absolute text-gray-400 text-4xl font-extrabold"><</button>
                 <button (click)="nextClothes(l,i)" [ngClass]="{'hidden'  : cloth.images.length-1 <=   this.currentIndex[i]}" class="right-0 bottom-28 absolute text-gray-400 text-4xl font-extrabold">></button>
                 
-                <span (click)="showingImage(l,i)" class="p-1  border-2 border-black-600" [ngClass]="{'bg-gray-300 rounded-xl':l ===  currentIndex[i]}" >{{l+1}}</span>
+                <span (click)="showingImage(l,i)" class="p-1 cursor-pointer border-2 border-black-600" [ngClass]="{'bg-gray-300 rounded-xl':l ===  currentIndex[i]}" >b</span>
             </div>
            
         </div>
